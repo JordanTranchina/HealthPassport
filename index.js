@@ -1,4 +1,14 @@
 firebase.auth().onAuthStateChanged(async function (user) {
+
+
+  let button = document.querySelector(".button")
+  button.addEventListener("click", function (event) {
+    event.preventDefault()
+
+    let illness = document.querySelector("#illness").value
+    console.log(`the illness is ${illness}`);
+  })
+
   if (user) {
     // Signed in
     console.log('signed in')
