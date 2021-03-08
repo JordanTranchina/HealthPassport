@@ -1,6 +1,8 @@
 firebase.auth().onAuthStateChanged(async function (user) {
 
   let db = firebase.firestore()
+  let querySnapshot = await db.collection('shots').get()
+  console.log(querySnapshot.size)
 
   let button = document.querySelector(".button")
   button.addEventListener("click", function (event) {
