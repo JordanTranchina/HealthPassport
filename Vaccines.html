@@ -13,36 +13,40 @@
   <div class="sign-in-or-sign-out"></div>
 
   <!-- NAVIGATION -->
-  <div title="navigation" class="flex p-4 bg-gray-500 text-white">
-    <p class="w-1/5 text-center"><a href="index.html">Home</a></p>
-    <p class="w-1/5 text-center"><a href="Vaccines.html">Vaccines</a></p>
-    <p class="w-1/5 text-center"><a href="Family.html">Family</a></p>
-    <p class="w-1/5 text-center"><a href="mailto:help@HealthPassport.com">Help</a></p>
-    <p class="w-1/5 text-center"><a href="example.com">Alex Navarro | Log Out</a></p>
+  <div title="navigation" class="px-10 py-4 text-blue-600 border border-gray-300">
+    <div class="flex">
+        <div class="w-1/2 flex">
+              <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
+              <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
+              <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
+              <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
+        </div>
+        <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
+    </div>
   </div>
 
   <!-- HEADER -->
-  <div>Vaccine History</div>
+  <div class="text-5xl p-10 text-grey-darker">Vaccine History</div>
 
   <!-- Vaccine Card -->
-  <div>Latest Vaccines</div>
+  <div class="text-2xl px-10 text-grey-darker">Latest Vaccines</div>
   <div class="container-vaccineCard">
     <!-- Javascript fills data here -->
   </div>
 
   <!-- Form -->
   <div>
-    <form class="w-full mt-8">
+    <form class=" px-10 w-full mt-8">
       <input type="text" id="shotName" name="shotName" placeholder="Shot Name"
         class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
-      <input type="text" id="dateInitial" name="dateInitial" placeholder="Date of initial shot"
+      <input type="text" id="dateInitial" name="dateInitial" placeholder="Date of Initial Shot"
         class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
-      <input type="text" id="dateBooster1" name="dateBooster1" placeholder="Date of booster shot 1"
+      <input type="text" id="dateBooster1" name="dateBooster1" placeholder="Date of Booster Shot 1"
         class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
-      <input type="text" id="dateBooster2" name="dateBooster2" placeholder="Date of booster shot 2"
+      <input type="text" id="dateBooster2" name="dateBooster2" placeholder="Date of Booster Shot 2"
         class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
       <button class="button bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
