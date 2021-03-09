@@ -8,8 +8,23 @@ firebase.auth().onAuthStateChanged(async function (user) {
   button.addEventListener("click", function (event) {
     event.preventDefault()
 
-    let illness = document.querySelector("#illness").value
-    console.log(`the illness is ${illness}`);
+    // listen for values
+
+    // shotname
+    let shotName = document.querySelector("#shotName").value
+    console.log(`the Shot Name is ${shotName}`);
+
+    // dateInitial
+    let dateInitial = document.querySelector("#dateInitial").value
+    console.log(`the Initial shot date is ${dateInitial}`);
+
+    // dateBooster1
+    let dateBooster1 = document.querySelector("#dateBooster1").value
+    console.log(`the Booster 1 shot date is ${dateBooster1}`);
+
+    // dateBooster1
+    let dateBooster2 = document.querySelector("#dateBooster2").value
+    console.log(`the Booster 1 shot date is ${dateBooster2}`);
   })
 
   if (user) {
