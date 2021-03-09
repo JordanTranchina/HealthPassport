@@ -13,18 +13,60 @@
   <div class="sign-in-or-sign-out"></div>
 
   <!-- NAVIGATION -->
-  <div title="navigation" class="flex p-4 bg-gray-500 text-white">
-    <p class="w-1/5 text-center"><a href="index.html">Home</a></p>
-    <p class="w-1/5 text-center"><a href="Vaccines.html">Vaccines</a></p>
-    <p class="w-1/5 text-center"><a href="Family.html">Family</a></p>
-    <p class="w-1/5 text-center"><a href="mailto:help@HealthPassport.com">Help</a></p>
-    <p class="w-1/5 text-center"><a href="example.com">Alex Navarro | Log Out</a></p>
+  <div title="navigation" class="px-10 py-6 text-blue-600 border border-gray-300">
+    <div class="flex">
+        <div class="w-1/2 flex">
+              <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
+              <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
+              <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
+              <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
+        </div>
+        <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
+    </div>
   </div>
 
   <!-- NOTE FOR ALEX -->
 
   <!-- HEADER -->
-  <div>Family History</div>
+  <div class="text-5xl p-10 text-grey-darker">Family History</div>
+  <div class="text-2xl px-10 text-grey-darker">Latest Entries</div>
+
+  <div class="family-cards">
+    <div class="family-cards mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
+      <div class="font-bold text-grey-darker pb-2">Mother - Julia Navarro</div>
+        <div class="header border-t pt-4 border-gray-300">
+        <div class="flex">
+          <div class="space-y-2 w-1/3">
+            <div class="flex">
+              <p class="w-1/2 text-grey-darker text-left">Age</p>
+              <p class="w-1/2 text-grey-darker text-right pr-4">77</p>
+            </div>
+              <div class ="health-issue">
+                <div class="health-issue-row-1 flex">
+                  <p class="w-1/2 text-grey-darker text-left">Health Issue</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">High Blood Pressure</p>
+                </div>
+                <div class="health-issue-row-2 flex">
+                  <p class="w-1/2 pl-2 text-grey-darker text-left">Age when Diagnosed</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">75</p>
+                </div>
+                <div class="health-issue-row-3 flex">
+                  <p class="w-1/2 pl-2 text-grey-darker text-left">Issue under Control?</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">Yes</p>
+                </div>
+              </div>
+          </div>
+          <div class="notes space-y-2 w-2/3 border-l border-gray-300 px-4">
+            <p class="text-grey-darker text-left">Notes:</p>
+            <p class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
+                  IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
+                  Ipsum</p>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
 
   <!-- ---------------- FIREBASE BELOW --------------- -->
   <!-- Put the Firebase config here -->
