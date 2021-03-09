@@ -87,7 +87,7 @@ async function printVaccineCard(vaccineCard) {
   let shotId = vaccineCard.id
   document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
     `
-    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl shadow-lg my-4">
+    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl shadow-lg my-4 mx-10">
       <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>
       <div class="shots space-y-2 border-t pt-4 border-gray-300">
         <div class="shots-row-1 flex">
