@@ -83,13 +83,23 @@ async function printVaccineCard(vaccineCard) {
   let shotId = vaccineCard.id
   document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
     `
-    ${shotId}
-    ${vaccineCard.currentUserId}
-    ${vaccineCard.shotUsername}
-    ${vaccineCard.shotName}
-    ${vaccineCard.dateInitial}
-    ${vaccineCard.dateBooster1}
-    ${vaccineCard.dateBooster2}
+    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl shadow-lg my-4">
+      <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>
+      <div class="shots space-y-2 border-t pt-4 border-gray-300">
+        <div class="shots-row-1 flex">
+          <p class="w-1/2 text-grey-darker text-left">Initial</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateInitial}</p>
+        </div>
+        <div class="shots-row-2 flex">
+          <p class="w-1/2 text-grey-darker text-left">Booster 1</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster1}</p>
+        </div>
+        <div class="shots-row-3 flex">
+          <p class="w-1/2 text-grey-darker text-left">Booster 2</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster2}</p>
+        </div>
+      </div>
+    </div>
     `
   )
 }
