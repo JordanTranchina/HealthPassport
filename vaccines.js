@@ -42,12 +42,21 @@ firebase.auth().onAuthStateChanged(async function (user) {
           dateBooster2: dateBooster2
         })
       }) //end of response
-
       let vaccineCard = await response.json()
       console.log(response);
       console.log(vaccineCard);
+      // document.querySelector('#image-url').value = '' // need to add code to clear the form fields like this
+      printVaccineCard(vaccineCard)
 
-    }) // end of sign in
+    }) // end of form submit
+
+    let response = await fetch('/.netlify/functions/get_shots')
+    let shots = await response.json()
+    for (let i = 0; i < shots.length; i++) {
+      let vaccineCard = shots[i]
+      console.log(vaccineCard);
+      printVaccineCard(vaccineCard)
+    }
 
   } else {
     // Signed out

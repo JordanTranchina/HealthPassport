@@ -12,6 +12,7 @@ exports.handler = async function (event) {
   let dateBooster2 = body.dateBooster2
   // let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
 
+  console.log("Succesfull call of create_shot.js");
   console.log(`currentUserId is ${currentUserId}`);
   console.log(`shotName is ${shotName}`);
 
