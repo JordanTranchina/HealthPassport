@@ -2,7 +2,7 @@
 let firebase = require('./firebase')
 
 exports.handler = async function (event) {
-  let db = firebase.firstore()
+  let db = firebase.firestore()
   let body = JSON.parse(event.body)
   let currentUserId = body.currentUserId
   let shotUsername = body.shotUsername
@@ -10,7 +10,7 @@ exports.handler = async function (event) {
   let dateInitial = body.dateInitial
   let dateBooster1 = body.dateBooster1
   let dateBooster2 = body.dateBooster2
-  let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
+  // let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
 
   console.log(`currentUserId is ${currentUserId}`);
   console.log(`shotName is ${shotName}`);
@@ -22,7 +22,7 @@ exports.handler = async function (event) {
     dateInitial: dateInitial,
     dateBooster1: dateBooster1,
     dateBooster2: dateBooster2,
-    created: createdTimestamp
+    // created: createdTimestamp
   }
 
   // pushing and defining the new post from the database at same time 

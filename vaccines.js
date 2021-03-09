@@ -1,8 +1,8 @@
 firebase.auth().onAuthStateChanged(async function (user) {
 
-  let db = firebase.firestore()
-  let querySnapshot = await db.collection('shots').get()
-  console.log(querySnapshot.size)
+  // let db = firebase.firestore()
+  // let querySnapshot = await db.collection('shots').get()
+  // console.log(querySnapshot.size)
 
   if (user) {
     // Signed in
