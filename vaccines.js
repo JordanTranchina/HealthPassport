@@ -45,7 +45,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let vaccineCard = await response.json()
       console.log(response);
       console.log(vaccineCard);
-      // document.querySelector('#image-url').value = '' // need to add code to clear the form fields like this
+      // clear values
+      document.querySelector('#shotName').value = ''
+      document.querySelector('#dateInitial').value = ''
+      document.querySelector('#dateBooster1 ').value = ''
+      document.querySelector('#dateBooster2').value = ''
       printVaccineCard(vaccineCard)
 
     }) // end of form submit
