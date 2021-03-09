@@ -26,21 +26,21 @@
 
   <!-- Vaccine Card -->
   <div>Latest Vaccines</div>
-  <div class="vaccine-cards">
-    <div class="vaccine-card px-4 py-4 max-w-xs rounded-xl shadow-lg my-4">
-      <div class="font-bold text-xl mb-2">Chicken Pox</div>
+  <div class="container-vaccineCard-">
+    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl shadow-lg my-4">
+      <div class="shot-name font-bold text-xl mb-2">Chicken Pox</div> <!-- shotName -->
       <div class="shots space-y-2 border-t pt-4 border-gray-300">
         <div class="shots-row-1 flex">
           <p class="w-1/2 text-grey-darker text-left">Initial</p>
-          <p class="w-1/2 text-grey-darker text-right">07/04/1994</p>
+          <p class="w-1/2 text-grey-darker text-right">07/04/1994</p> <!-- date-initial -->
         </div>
         <div class="shots-row-2 flex">
           <p class="w-1/2 text-grey-darker text-left">Booster 1</p>
-          <p class="w-1/2 text-grey-darker text-right">07/04/1995</p>
+          <p class="w-1/2 text-grey-darker text-right">07/04/1995</p> <!-- date-booster-1 -->
         </div>
         <div class="shots-row-3 flex">
           <p class="w-1/2 text-grey-darker text-left">Booster 2</p>
-          <p class="w-1/2 text-grey-darker text-right">07/04/1996</p>
+          <p class="w-1/2 text-grey-darker text-right">07/04/1996</p> <!-- date-booster-2 -->
         </div>
       </div>
     </div>
@@ -49,9 +49,19 @@
   <!-- Form -->
   <div>
     <form class="w-full mt-8">
-      <input type="text" id="illness" name="illness" placeholder="Illness"
+      <input type="text" id="shotName" name="shotName" placeholder="Shot Name"
         class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <button class="button bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Done editing</button>
+
+      <input type="text" id="dateInitial" name="dateInitial" placeholder="Date of initial shot"
+        class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <input type="text" id="dateBooster1" name="dateBooster1" placeholder="Date of booster shot 1"
+        class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <input type="text" id="dateBooster2" name="dateBooster2" placeholder="Date of booster shot 2"
+        class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <button class="button bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
     </form>
   </div>
 
