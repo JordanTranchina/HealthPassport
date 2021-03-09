@@ -2,7 +2,7 @@
 let firebase = require('./firebase')
 
 exports.handler = async function (event) {
-  let db = firestore.firebase()
+  let db = firebase.firestore()
   let shotsData = []
 
   let shotsQuery = await db.collection('shots').get()            // shots from Firestore

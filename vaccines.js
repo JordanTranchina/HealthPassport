@@ -77,3 +77,19 @@ firebase.auth().onAuthStateChanged(async function (user) {
     ui.start('.sign-in-or-sign-out', authUIConfig)
   }
 })
+
+async function printVaccineCard(vaccineCard) {
+  console.log("Succesfully called printVaccineCard");
+  let shotId = vaccineCard.id
+  document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
+    `
+    ${shotId}
+    ${vaccineCard.currentUserId}
+    ${vaccineCard.shotUsername}
+    ${vaccineCard.shotName}
+    ${vaccineCard.dateInitial}
+    ${vaccineCard.dateBooster1}
+    ${vaccineCard.dateBooster2}
+    `
+  )
+}
