@@ -85,7 +85,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
 async function printVaccineCard(vaccineCard) {
   console.log("Succesfully called printVaccineCard");
   let shotId = vaccineCard.id
-  document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
+  document.querySelector(".container-vaccineCards").insertAdjacentHTML("beforeend",
     `
     <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
       <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>

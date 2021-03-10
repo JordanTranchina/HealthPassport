@@ -64,7 +64,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#healthIssue').value = ''
       document.querySelector('#ageWhenDiagnosed').value = ''
       document.querySelector('#issueUnderControl').value = ''
-      printfamilyMemberCard(family) //asks front-end to print the cards when another is added
+      printFamilyMemberCard(familyMemberCard) //asks front-end to print the cards when another is added
 
     }) // end of form submit
 
@@ -99,22 +99,39 @@ firebase.auth().onAuthStateChanged(async function (user) {
 async function printFamilyMemberCard(familyMemberCard) {
   console.log("Succesfully called printFamilyMemberCard");
   let familyMemberId = familyMemberCard.id
-  document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
+  document.querySelector(".container-familyCards").insertAdjacentHTML("beforeend",
     `
-    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
-      <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>
-      <div class="shots space-y-2 border-t pt-4 border-gray-300">
-        <div class="shots-row-1 flex">
-          <p class="w-1/2 text-grey-darker text-left">Initial</p>
-          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateInitial}</p>
-        </div>
-        <div class="shots-row-2 flex">
-          <p class="w-1/2 text-grey-darker text-left">Booster 1</p>
-          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster1}</p>
-        </div>
-        <div class="shots-row-3 flex">
-          <p class="w-1/2 text-grey-darker text-left">Booster 2</p>
-          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster2}</p>
+    <div class="familyCard mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
+      <div class="name-and-relationship font-bold text-grey-darker pb-2">${familyMemberCard.memberName} - ${familyMemberCard.relationship}</div>
+      <div class="divider-horizontal border-t pt-4 border-gray-300">
+        <div class="container-familyData flex">
+          <div class="card-left space-y-2 w-1/3">
+            <div class="flex">
+              <p class="w-1/2 text-grey-darker text-left">Age</p>
+              <p class="w-1/2 text-grey-darker text-right pr-4">${familyMemberCard.age}</p>
+            </div>
+            <div class="container-healthIssue">
+              <div class="healthIssue-row-1 flex">
+                <p class="w-1/2 text-grey-darker text-left">Health Issue</p>
+                <p class="w-1/2 text-grey-darker text-right pr-4">${familyMemberCard.healthIssue}</p>
+              </div>
+              <div class="ageWhenDiagnosed flex">
+                <p class="w-1/2 pl-2 text-grey-darker text-left">Age when Diagnosed</p>
+                <p class="w-1/2 text-grey-darker text-right pr-4">${familyMemberCard.ageWhenDiagnosed}</p>
+              </div>
+              <div class="issueUnderControl flex">
+                <p class="w-1/2 pl-2 text-grey-darker text-left">Issue under Control?</p>
+                <p class="w-1/2 text-grey-darker text-right pr-4">${familyMemberCard.issueUnderControl}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-right notes space-y-2 w-2/3 border-l border-gray-300 px-4">
+            <p class="text-grey-darker text-left">Notes:</p>
+            <p class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+              IpsumLorem Ipsum Lorem Ipsum Lorem
+              IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
+              Ipsum</p> <!-- notes -->
+          </div>
         </div>
       </div>
     </div>
