@@ -50,7 +50,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#dateInitial').value = ''
       document.querySelector('#dateBooster1 ').value = ''
       document.querySelector('#dateBooster2').value = ''
-      printVaccineCard(vaccineCard)
+      printVaccineCard(vaccineCard) //asks front-end to print the cards when another is added
 
     }) // end of form submit
 

@@ -53,27 +53,28 @@ firebase.auth().onAuthStateChanged(async function (user) {
           issueUnderControl: issueUnderControl
         })
       }) //end of response
-      // let familyMemberCard = await response.json()
-      // console.log(response);
-      // console.log(familyMemberCard);
-      // // clear values
-      // document.querySelector('#memberName').value = ''
-      // document.querySelector('#relationship').value = ''
-      // document.querySelector('#age').value = ''
-      // document.querySelector('#healthIssue').value = ''
-      // document.querySelector('#ageWhenDiagnosed').value = ''
-      // document.querySelector('#issueUnderControl').value = ''
-      // printfamilyMemberCard(family) uncomment this when printing
+      let familyMemberCard = await response.json()
+      // repeating back what we just sent to the backend
+      console.log(response);
+      console.log(familyMemberCard);
+      // clearing form values on frontend
+      document.querySelector('#memberName').value = ''
+      document.querySelector('#relationship').value = ''
+      document.querySelector('#age').value = ''
+      document.querySelector('#healthIssue').value = ''
+      document.querySelector('#ageWhenDiagnosed').value = ''
+      document.querySelector('#issueUnderControl').value = ''
+      printfamilyMemberCard(family) //asks front-end to print the cards when another is added
 
     }) // end of form submit
 
-    // let response = await fetch('/.netlify/functions/get_shots')
-    // let shots = await response.json()
-    // for (let i = 0; i < shots.length; i++) {
-    //   let vaccineCard = shots[i]
-    //   // console.log(vaccineCard);
-    //   printVaccineCard(vaccineCard)
-    // }
+    let response = await fetch('/.netlify/functions/get_familyMembers')
+    let familyMembers = await response.json()
+    for (let i = 0; i < familyMembers.length; i++) {
+      let familyMemberCard = familyMembers[i]
+      console.log(familyMemberCard);
+      printFamilyMemberCard(familyMemberCard)
+    }
 
   } else {
     // Signed out

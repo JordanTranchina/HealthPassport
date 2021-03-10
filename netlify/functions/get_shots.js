@@ -10,7 +10,7 @@ exports.handler = async function (event) {
   // .get()
 
   // add the where query here to filter by user id...I think
-  let shots = shotsQuery.docs  // the shot documents themselves
+  let shots = shotsQuery.docs  // the shots documents themselves
 
   for (let i = 0; i < shots.length; i++) {
     let shotId = shots[i].id                                // the ID for the given shot
