@@ -4,40 +4,45 @@ let firebase = require('./firebase')
 exports.handler = async function (event) {
   let db = firebase.firestore()
   let body = JSON.parse(event.body)
+
   let currentUserId = body.currentUserId
-  let shotUsername = body.shotUsername
-  let shotName = body.shotName
-  let dateInitial = body.dateInitial
-  let dateBooster1 = body.dateBooster1
-  let dateBooster2 = body.dateBooster2
+  let username = body.username
+  let memberName = body.memberName
+  let relationship = body.relationship
+  let age = body.age
+  let healthIssue = body.healthIssue
+  let ageWhenDiagnosed = body.ageWhenDiagnosed
+  let issueUnderControl = body.issueUnderControl
   // let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
 
-  console.log("Succesfull call of create_familyMembers.js");
+  console.log("Succesfull call of create_familyMember.js");
   console.log(`currentUserId is ${currentUserId}`);
-  console.log(`shotName is ${shotName}`);
+  console.log(`memberName is ${memberName}`);
 
-  let shot = {
+  let familyMember = {
     userId: currentUserId,
-    shotUsername: shotUsername,
-    shotName: shotName,
-    dateInitial: dateInitial,
-    dateBooster1: dateBooster1,
-    dateBooster2: dateBooster2,
+    username: username,
+    memberName: memberName,
+    relationship: relationship,
+    age: age,
+    healthIssue: healthIssue,
+    ageWhenDiagnosed: ageWhenDiagnosed,
+    issueUnderControl: issueUnderControl
     // created: createdTimestamp
   }
 
   // pushing and defining the new post from the database at same time 
-  let newShot = await db.collection("shots").add(shot)
-  console.log(newShot);
+  let newFamilyMember = await db.collection("familyMembers").add(familyMember)
+  console.log(newFamilyMember);
 
-  // asking newShot what it's id is
-  console.log(newShot.id);
+  // asking newFamilyMember what it's id is
+  console.log(newFamilyMember.id);
 
   // setting id of API shot to id of shot in firestore
-  shot.id = newShot.id
+  familyMember.id = newFamilyMember.id
 
   return {
     statusCode: 200,
-    body: JSON.stringify(shot)
+    body: JSON.stringify(familyMember)
   }
 }
