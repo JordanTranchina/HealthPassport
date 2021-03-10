@@ -15,13 +15,13 @@
   <!-- NAVIGATION -->
   <div title="navigation" class="px-10 py-4 text-blue-600 border border-gray-300">
     <div class="flex">
-        <div class="w-1/2 flex">
-              <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
-              <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
-              <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
-              <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
-        </div>
-        <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
+      <div class="w-1/2 flex">
+        <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
+        <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
+        <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
+        <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
+      </div>
+      <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
     </div>
   </div>
 
@@ -31,40 +31,84 @@
   <div class="text-5xl p-10 text-grey-darker">Family History</div>
   <div class="text-2xl px-10 text-grey-darker">Latest Entries</div>
 
-  <div class="family-cards">
-    <div class="family-cards mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
-      <div class="font-bold text-grey-darker pb-2">Mother - Julia Navarro</div>
+  <!-- Family Card -->
+  <div class="container-familyCards">
+    <!-- Javascript fills data here -->
+    <div class="family-cards">
+      <div class="family-cards mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
+        <div class="font-bold text-grey-darker pb-2">Mother - Julia Navarro</div> <!-- relationship & name -->
         <div class="header border-t pt-4 border-gray-300">
-        <div class="flex">
-          <div class="space-y-2 w-1/3">
-            <div class="flex">
-              <p class="w-1/2 text-grey-darker text-left">Age</p>
-              <p class="w-1/2 text-grey-darker text-right pr-4">77</p>
-            </div>
-              <div class ="health-issue">
+          <div class="flex">
+            <div class="space-y-2 w-1/3">
+              <div class="flex">
+                <p class="w-1/2 text-grey-darker text-left">Age</p>
+                <p class="w-1/2 text-grey-darker text-right pr-4">77</p> <!-- age -->
+              </div>
+              <div class="health-issue">
                 <div class="health-issue-row-1 flex">
                   <p class="w-1/2 text-grey-darker text-left">Health Issue</p>
-                  <p class="w-1/2 text-grey-darker text-right pr-4">High Blood Pressure</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">High Blood Pressure</p> <!-- healthIssue -->
                 </div>
                 <div class="health-issue-row-2 flex">
                   <p class="w-1/2 pl-2 text-grey-darker text-left">Age when Diagnosed</p>
-                  <p class="w-1/2 text-grey-darker text-right pr-4">75</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">75</p> <!-- ageWhenDiagnosed -->
                 </div>
                 <div class="health-issue-row-3 flex">
                   <p class="w-1/2 pl-2 text-grey-darker text-left">Issue under Control?</p>
-                  <p class="w-1/2 text-grey-darker text-right pr-4">Yes</p>
+                  <p class="w-1/2 text-grey-darker text-right pr-4">Yes</p> <!-- issueUnderControl -->
                 </div>
               </div>
-          </div>
-          <div class="notes space-y-2 w-2/3 border-l border-gray-300 px-4">
-            <p class="text-grey-darker text-left">Notes:</p>
-            <p class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
-                  IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
-                  Ipsum</p>
+            </div>
+            <div class="notes space-y-2 w-2/3 border-l border-gray-300 px-4">
+              <p class="text-grey-darker text-left">Notes:</p>
+              <p class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+                IpsumLorem Ipsum Lorem Ipsum Lorem
+                IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
+                Ipsum</p> <!-- notes -->
+            </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- relationship & name -->
+  <!-- age -->
+  <!-- healthIssue -->
+  <!-- ageWhenDiagnosed -->
+  <!-- issueUnderControl -->
+
+  <!-- Form -->
+
+  <div>
+    <form class="px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
+
+      <!-- relationship -->
+      <input type="text" id="relationship" name="relationship" placeholder="Relationship"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- name -->
+      <input type="text" id="name" name="name" placeholder="Name"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- age -->
+      <input type="text" id="age" name="age" placeholder="Age"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- healthIssue -->
+      <input type="text" id="healthIssue" name="healthIssue" placeholder="Health Issue"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- ageWhenDiagnosed -->
+      <input type="text" id="ageWhenDiagnosed" name="ageWhenDiagnosed" placeholder="Age when diagnosed"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- issueUnderControl -->
+      <input type="text" id="issueUnderControl" name="issueUnderControl" placeholder="Issue under Control"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <button class="button bg-blue-600 hover:bg-blue-600 text-white mt-2 px-4 py-2 rounded-xl">Submit</button>
+    </form>
   </div>
 
 
@@ -89,7 +133,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
-  <script src="index.js"></script>
+  <script src="family.js"></script>
 </body>
 
 </html>
