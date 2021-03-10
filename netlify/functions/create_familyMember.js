@@ -13,6 +13,7 @@ exports.handler = async function (event) {
   let healthIssue = body.healthIssue
   let ageWhenDiagnosed = body.ageWhenDiagnosed
   let issueUnderControl = body.issueUnderControl
+  let notes = body.notes
   // let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
 
   console.log("Succesfull call of create_familyMember.js");
@@ -27,7 +28,8 @@ exports.handler = async function (event) {
     age: age,
     healthIssue: healthIssue,
     ageWhenDiagnosed: ageWhenDiagnosed,
-    issueUnderControl: issueUnderControl
+    issueUnderControl: issueUnderControl,
+    notes: notes
     // created: createdTimestamp
   }
 

@@ -27,7 +27,8 @@ exports.handler = async function (event) {
       age: familyMemberData.age,
       healthIssue: familyMemberData.healthIssue,
       ageWhenDiagnosed: familyMemberData.ageWhenDiagnosed,
-      issueUnderControl: familyMemberData.issueUnderControl
+      issueUnderControl: familyMemberData.issueUnderControl,
+      note: familyMemberData.notes
     })
   }
 

@@ -1,8 +1,5 @@
 firebase.auth().onAuthStateChanged(async function (user) {
 
-  // let db = firebase.firestore()
-  // let querySnapshot = await db.collection('shots').get()
-  // console.log(querySnapshot.size)
 
   if (user) {
     // Signed in
@@ -40,6 +37,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let issueUnderControl = document.querySelector("#issueUnderControl").value
       console.log(`the issueUnderControl value is ${issueUnderControl}`);
 
+      // notes
+      let notes = document.querySelector("#notes").value
+      console.log(`the notes are ${notes}`);
+
       let response = await fetch("/.netlify/functions/create_familyMember", {
         method: "POST",
         body: JSON.stringify({
@@ -50,7 +51,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
           age: age,
           healthIssue: healthIssue,
           ageWhenDiagnosed: ageWhenDiagnosed,
-          issueUnderControl: issueUnderControl
+          issueUnderControl: issueUnderControl,
+          notes: notes
         })
       }) //end of response
       let familyMemberCard = await response.json()
@@ -64,6 +66,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#healthIssue').value = ''
       document.querySelector('#ageWhenDiagnosed').value = ''
       document.querySelector('#issueUnderControl').value = ''
+      document.querySelector('#notes').value = ''
+
       printFamilyMemberCard(familyMemberCard) //asks front-end to print the cards when another is added
 
     }) // end of form submit
@@ -88,7 +92,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID
       ],
-      signInSuccessUrl: 'vaccines.html'
+      signInSuccessUrl: 'family.html'
     }
 
     // Starts FirebaseUI Auth
@@ -127,10 +131,7 @@ async function printFamilyMemberCard(familyMemberCard) {
           </div>
           <div class="card-right notes space-y-2 w-2/3 border-l border-gray-300 px-4">
             <p class="text-grey-darker text-left">Notes:</p>
-            <p class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              IpsumLorem Ipsum Lorem Ipsum Lorem
-              IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
-              Ipsum</p> <!-- notes -->
+            <p class="text-grey-darker text-left">${familyMemberCard.notes}</p>
           </div>
         </div>
       </div>
