@@ -15,13 +15,13 @@
   <!-- NAVIGATION -->
   <div title="navigation" class="px-10 py-4 text-blue-600 border border-gray-300">
     <div class="flex">
-        <div class="w-1/2 flex">
-              <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
-              <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
-              <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
-              <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
-        </div>
-        <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
+      <div class="w-1/2 flex">
+        <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
+        <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
+        <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
+        <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
+      </div>
+      <p class="log-out w-1/2 text-right"><a href="index.html">Alex Navarro | Log Out</a></p>
     </div>
   </div>
 
@@ -31,78 +31,81 @@
     <h2 class="text-2xl px-10 text-grey-darker">Latest Health Passport Entries</h2>
     <div class="home-cards">
       <!-- to be added in dynamically -->
-
-    <div class="home-card" id="home-card-1">
-      <div class="home-card mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
-        <h3 class="font-bold text-grey-darker pb-2">Checkup on 2/28/2021</h3>
+      <div class="home-card" id="home-card-1">
+        <div class="home-card mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
+          <h3 class="font-bold text-grey-darker pb-2">Checkup on 2/28/2021</h3>
           <div class="header border-t pt-4 border-gray-300">
-              <div class="flex">
-                <div class="home-card-left space-y-2 w-1/3">
-                  <div class="card-feature-height flex">
-                    <div class="w-1/2 text-grey-darker text-left">Height</div>
-                    <div class="w-1/2 text-grey-darker text-right pr-4">6' 2"</div>
-                  </div>
-                  <div class="card-feature-weight flex">
-                    <div class="w-1/2 text-grey-darker text-left">Weight</div>
-                    <div class="w-1/2 text-grey-darker text-right pr-4">185lbs</div>
-                  </div>
-                  <div class="card-feature-blood-pressure flex">
-                    <div class="w-1/2 text-grey-darker text-left">Blood Pressure</div>
-                    <div class="w-1/2 text-grey-darker text-right pr-4">120/70</div>
-                  </div>
-                  <div class="card-feature-resting-heart-rate flex">
-                    <div class="w-1/2 text-grey-darker text-left">Resting Heart Rate</div>
-                    <div class="w-1/2 text-grey-darker text-right pr-4">85</div>
-                  </div>
+            <div class="flex">
+              <div class="home-card-left space-y-2 w-1/3">
+                <div class="card-feature-height flex">
+                  <div class="w-1/2 text-grey-darker text-left">Height</div>
+                  <div class="w-1/2 text-grey-darker text-right pr-4">6' 2"</div>
                 </div>
-                <div class="home-card-right space-y-2 w-2/3 border-l border-gray-300 px-4">
-                  <div class="text-grey-darker text-left">Notes:</div>
-                  <div class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
-                    IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem
-                    Ipsum</div>
+                <div class="card-feature-weight flex">
+                  <div class="w-1/2 text-grey-darker text-left">Weight</div>
+                  <div class="w-1/2 text-grey-darker text-right pr-4">185lbs</div>
+                </div>
+                <div class="card-feature-blood-pressure flex">
+                  <div class="w-1/2 text-grey-darker text-left">Blood Pressure</div>
+                  <div class="w-1/2 text-grey-darker text-right pr-4">120/70</div>
+                </div>
+                <div class="card-feature-resting-heart-rate flex">
+                  <div class="w-1/2 text-grey-darker text-left">Resting Heart Rate</div>
+                  <div class="w-1/2 text-grey-darker text-right pr-4">85</div>
                 </div>
               </div>
+              <div class="home-card-right space-y-2 w-2/3 border-l border-gray-300 px-4">
+                <div class="text-grey-darker text-left">Notes:</div>
+                <div class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                  Lorem
+                  IpsumLorem Ipsum Lorem Ipsum Lorem
+                  IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
+                  Lorem
+                  Ipsum</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
 
 
-  <!-- Comments Section -->
-  <div class="mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">My Comments:</div>
-  <div class="myComments">
-  </div>
- 
-  <!-- Form -->
-  <div>
-    <form class="px-10 w-full mt-8">
-      <input type="text" id="comments" name="comments" placeholder="comments"
-        class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <button class="button bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Done Editing</button>
-    </form>
-  </div>
+    <!-- Comments Section -->
+    <div class="mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">My Comments:</div>
+    <div class="myComments">
+    </div>
 
-  <!-- ---------------- FIREBASE BELOW --------------- -->
-  <!-- Put the Firebase config here -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-  <!-- Firebase Auth -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyB2ghQCvl9Bps-uv_7ToQTiwqzcYwiSsr0",
-      authDomain: "kiei-451-4d1c2.firebaseapp.com",
-      projectId: "kiei-451-4d1c2",
-      storageBucket: "kiei-451-4d1c2.appspot.com",
-      messagingSenderId: "1064307467074",
-      appId: "1:1064307467074:web:88407534ef9360dde81edb"
-    }
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-  <script src="index.js"></script>
+    <!-- Form -->
+    <div>
+      <form class="px-10 w-full mt-8">
+        <input type="text" id="comments" name="comments" placeholder="comments"
+          class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+        <button class="button bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Done Editing</button>
+      </form>
+    </div>
+
+    <!-- ---------------- FIREBASE BELOW --------------- -->
+    <!-- Put the Firebase config here -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB2ghQCvl9Bps-uv_7ToQTiwqzcYwiSsr0",
+        authDomain: "kiei-451-4d1c2.firebaseapp.com",
+        projectId: "kiei-451-4d1c2",
+        storageBucket: "kiei-451-4d1c2.appspot.com",
+        messagingSenderId: "1064307467074",
+        appId: "1:1064307467074:web:88407534ef9360dde81edb"
+      }
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

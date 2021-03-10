@@ -13,14 +13,25 @@ firebase.auth().onAuthStateChanged(async function (user) {
   // })
   if (user) {
 
-    document.querySelector('.sign-in-or-sign-out').innerHTML = `
+    document.querySelector('.sign-in-or-sign-out').innerHTML =
+      `
       <a href="#" class="sign-in-or-sign-out-button w-1/2 text-right underline px-10 py-4 text-blue-600">Log Out</a>
     `
-    document.querySelector('.sign-in-or-sign-out-button').addEventListener('click', function(event) {
+
+    // Add event listener here
+    document.querySelector('.log-out').addEventListener('click', function (event) {
       event.preventDefault()
       firebase.auth().signOut()
+      console.log("logging out!");
       document.location.href = 'index.html'
     })
+
+
+    // document.querySelector('.sign-in-or-sign-out-button').addEventListener('click', function (event) {
+    //   event.preventDefault()
+    //   firebase.auth().signOut()
+    //   document.location.href = 'index.html'
+    // })
 
     document.querySelector("form").addEventListener("submit", async function (event) {
       event.preventDefault()
@@ -45,8 +56,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
     let db = firebase.firestore()
     let querySnapshot = await db.collection('mycomments').where('userId', '==', user.uid).get()
     let comments = querySnapshot.docs
-    for (let i=0; i<comments.length; i++) {
-      let commentsId = comments[i].id 
+    for (let i = 0; i < comments.length; i++) {
+      let commentsId = comments[i].id
       let commentsData = comments[i].data()
       let commentsText = commentsData.text
       document.querySelector('.myComments').insertAdjacentHTML('beforeend', `
@@ -56,15 +67,15 @@ firebase.auth().onAuthStateChanged(async function (user) {
     `)
     }
 
-      // Ensure the signed-in user is in the users collection
-      db.collection('users').doc(user.uid).set({
-        name: user.displayName,
-        email: user.email
-      })
+    // Ensure the signed-in user is in the users collection
+    db.collection('users').doc(user.uid).set({
+      name: user.displayName,
+      email: user.email
+    })
 
-    } else {
-      //need to hide the rest of this form
-      document.querySelector('form').classList.add('hidden')
+  } else {
+    //need to hide the rest of this form
+    document.querySelector('form').classList.add('hidden')
 
     // Initializes FirebaseUI Auth
     let ui = new firebaseui.auth.AuthUI(firebase.auth())

@@ -8,6 +8,8 @@ exports.handler = async function (event) {
   let shotsQuery = await db.collection('shots').get()            // shots from Firestore
   // .orderBy('created')              // ordered by created
   // .get()
+
+  // add the where query here to filter by user id...I think
   let shots = shotsQuery.docs  // the shot documents themselves
 
   for (let i = 0; i < shots.length; i++) {
