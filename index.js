@@ -15,12 +15,12 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
     document.querySelector('.sign-in-or-sign-out').innerHTML =
       `
-      <a href="#" class="sign-in-or-sign-out-button w-1/2 text-right underline px-10 py-4 text-blue-600">Log Out</a>
-    `
+      <button class="sign-out text-right underline px-10 py-4 text-blue-600">Log Out</button>
+      `
 
     // Add event listener here
-    document.querySelector('.log-out').addEventListener('click', function (event) {
-      event.preventDefault()
+    document.querySelector('.sign-out').addEventListener('click', function (event) {
+      // event.preventDefault()
       firebase.auth().signOut()
       console.log("logging out!");
       document.location.href = 'index.html'
