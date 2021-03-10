@@ -96,28 +96,28 @@ firebase.auth().onAuthStateChanged(async function (user) {
   }
 })
 
-// async function printVaccineCard(vaccineCard) {
-//   // console.log("Succesfully called printVaccineCard");
-//   let shotId = vaccineCard.id
-//   document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
-//     `
-//     <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
-//       <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>
-//       <div class="shots space-y-2 border-t pt-4 border-gray-300">
-//         <div class="shots-row-1 flex">
-//           <p class="w-1/2 text-grey-darker text-left">Initial</p>
-//           <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateInitial}</p>
-//         </div>
-//         <div class="shots-row-2 flex">
-//           <p class="w-1/2 text-grey-darker text-left">Booster 1</p>
-//           <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster1}</p>
-//         </div>
-//         <div class="shots-row-3 flex">
-//           <p class="w-1/2 text-grey-darker text-left">Booster 2</p>
-//           <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster2}</p>
-//         </div>
-//       </div>
-//     </div>
-//     `
-//   )
-// }
+async function printFamilyMemberCard(familyMemberCard) {
+  console.log("Succesfully called printFamilyMemberCard");
+  let familyMemberId = familyMemberCard.id
+  document.querySelector(".container-vaccineCard").insertAdjacentHTML("beforeend",
+    `
+    <div class="vaccineCard px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
+      <div class="shot-name font-bold text-xl mb-2">${vaccineCard.shotName}</div>
+      <div class="shots space-y-2 border-t pt-4 border-gray-300">
+        <div class="shots-row-1 flex">
+          <p class="w-1/2 text-grey-darker text-left">Initial</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateInitial}</p>
+        </div>
+        <div class="shots-row-2 flex">
+          <p class="w-1/2 text-grey-darker text-left">Booster 1</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster1}</p>
+        </div>
+        <div class="shots-row-3 flex">
+          <p class="w-1/2 text-grey-darker text-left">Booster 2</p>
+          <p class="w-1/2 text-grey-darker text-right">${vaccineCard.dateBooster2}</p>
+        </div>
+      </div>
+    </div>
+    `
+  )
+}
