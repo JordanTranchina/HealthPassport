@@ -5,6 +5,14 @@ firebase.auth().onAuthStateChanged(async function (user) {
     // Signed in
     console.log('signed in')
 
+    const logout = document.querySelector('#sign-in-or-sign-out');
+    logout.addEventListener('click', (event) => {
+      event.preventDefault();
+      firebase.auth().signOut()
+        console.log("logging out!");
+        document.location.href = 'index.html'
+      })
+
     // Listen for the form submit and create/render the vaccine card
     document.querySelector("form").addEventListener("submit", async function (event) {
       event.preventDefault()
