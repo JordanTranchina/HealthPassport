@@ -105,11 +105,11 @@ async function printFamilyMemberCard(familyMemberCard) {
   let familyMemberId = familyMemberCard.id
   document.querySelector(".container-familyCards").insertAdjacentHTML("beforeend",
     `
-    <div class="familyCard mx-10 my-4 px-4 py-4 max-w-screen-lg rounded-xl border shadow-lg my-4">
+    <div class="familyCard mx-10 my-4 px-4 py-2 max-w-screen-lg rounded-xl border shadow-lg my-4">
       <div class="name-and-relationship font-bold text-grey-darker pb-2">${familyMemberCard.memberName} - ${familyMemberCard.relationship}</div>
-      <div class="divider-horizontal border-t pt-4 border-gray-300">
-        <div class="container-familyData flex">
-          <div class="card-left space-y-2 w-1/3">
+      <div class="divider-horizontal border-t pt-2 border-gray-300">
+        <div class="container-familyData md:flex">
+          <div class="card-left space-y-2 md:w-1/3 pb-2 md:pb-0">
             <div class="flex">
               <p class="w-1/2 text-grey-darker text-left">Age</p>
               <p class="w-1/2 text-grey-darker text-right pr-4">${familyMemberCard.age}</p>
@@ -129,7 +129,7 @@ async function printFamilyMemberCard(familyMemberCard) {
               </div>
             </div>
           </div>
-          <div class="card-right notes space-y-2 w-2/3 border-l border-gray-300 px-4">
+          <div class="card-right notes space-y-2 pt-2 md:pt-0 md:w-2/3 border-t md:border-t-0 md:border-l border-gray-300 md:px-4">
             <p class="text-grey-darker text-left">Notes:</p>
             <p class="text-grey-darker text-left">${familyMemberCard.notes}</p>
           </div>

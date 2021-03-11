@@ -13,23 +13,27 @@
   <div class="sign-in-or-sign-out"></div>
 
   <!-- NAVIGATION -->
-  <div title="navigation" class="px-10 py-4 text-blue-600 border border-gray-300">
+  <div title="navigation" class="px-2 md:px-10 py-4 text-blue-600 border border-gray-300">
     <div class="flex">
-      <div class="w-1/2 flex">
-        <p class="w-1/4 text-left"><a href="index.html">Home</a></p>
-        <p class="w-1/4 text-left"><a href="Vaccines.html">Vaccines</a></p>
-        <p class="w-1/4 text-left"><a href="Family.html">Family</a></p>
-        <p class="w-1/4 text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
-      </div>
-      <p class="w-1/2 text-right"><a href="example.com">Alex Navarro | Log Out</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="index.html">Home</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Vaccines.html">Vaccines</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Family.html">Family</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <!-- I had to take Alex Navarro | out to make it all fit. 
+        Probably a nice to have to have the name and if so we have to 
+        figure out how responsive design makes it only appear when on a full size screen. -->
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-right"><a href="example.com">Log Out</a></p>
     </div>
   </div>
 
   <!-- HEADER -->
-  <div class="text-5xl p-10 text-grey-darker">Vaccine History</div>
+  <div class="text-3xl md:text-5xl p-10 text-grey-darker">Vaccine History</div>
 
   <!-- Vaccine Card -->
-  <div class="text-2xl px-10 text-grey-darker">Latest Vaccines</div>
+  <div class="text-lg md:text-2xl px-10 text-grey-darker">Latest Vaccines</div>
   <div class="container-vaccineCards">
     <!-- Javascript fills data here -->
   </div>
@@ -37,7 +41,7 @@
 
   <!-- Form -->
   <div>
-    <form class="px-4 py-4 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
+    <form class="px-4 py-2 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
       <input type="text" id="shotName" name="shotName" placeholder="Shot Name"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
