@@ -14,23 +14,25 @@
 <body>
   <form>
 
-  <!-- NAVIGATION -->
-  <div title="navigation" class="px-2 md:px-10 py-4 text-blue-600 border border-gray-300">
-    <div class="flex">
-      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="index.html">Home</a></p>
-      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Vaccines.html">Vaccines</a></p>
-      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Family.html">Family</a></p>
-      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="mailto:help@HealthPassport.com">Help</a></p>
-      <div class="md:w-full w-0 md:w-1/8"></div>
-      <div class="md:w-full w-0 md:w-1/8"></div>
-      <div class="md:w-full w-0 md:w-1/8"></div>
-      <!-- I had to take Alex Navarro | out to make it all fit. 
+    <!-- NAVIGATION -->
+    <div title="navigation" class="px-2 md:px-10 py-4 text-blue-600 border border-gray-300">
+      <div class="flex">
+        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="index.html">Home</a></p>
+        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Vaccines.html">Vaccines</a></p>
+        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Family.html">Family</a></p>
+        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="mailto:help@HealthPassport.com">Help</a>
+        </p>
+        <div class="md:w-full w-0 md:w-1/8"></div>
+        <div class="md:w-full w-0 md:w-1/8"></div>
+        <div class="md:w-full w-0 md:w-1/8"></div>
+        <!-- I had to take Alex Navarro | out to make it all fit. 
         Probably a nice to have to have the name and if so we have to 
         figure out how responsive design makes it only appear when on a full size screen. -->
-      <p class="sign-in-or-sign-out md:w-full w-1/5 md:w-1/8 text-center md:text-right" id="sign-in-or-sign-out"><a href="index.html">Log Out</a></p>
+        <p class="sign-in-or-sign-out md:w-full w-1/5 md:w-1/8 text-center md:text-right" id="sign-in-or-sign-out"><a
+            href="index.html">Log Out</a></p>
 
+      </div>
     </div>
-  </div>
 
     <!-- Another log out attempt -->
     <!-- <form class="text-right px-10 py-4 text-blue-600 bg-transparent .sign-out" role="form">
@@ -39,7 +41,7 @@
 
     <!-- HEADER -->
     <div title="Header">
-      <h1 class="text-3xl md:text-5xl p-10 text-grey-darker">Welcome Back! How do you feel today?</h1>
+      <h1 class="welcome-text"></h1>
       <h2 class="text-lg md:text-2xl px-10 text-grey-darker">Latest Health Passport Entries</h2>
       <div class="home-cards">
         <!-- to be added in dynamically ALEX TO AJUST DYNAMIC FEATURES-->
@@ -66,7 +68,8 @@
                     <div class="w-1/2 text-grey-darker text-right pr-4">85</div>
                   </div>
                 </div>
-                <div class="home-card-right space-y-2 pt-2 md:pt-0 md:w-2/3 border-t md:border-t-0 md:border-l border-gray-300 md:px-4">
+                <div
+                  class="home-card-right space-y-2 pt-2 md:pt-0 md:w-2/3 border-t md:border-t-0 md:border-l border-gray-300 md:px-4">
                   <div class="text-grey-darker text-left">Notes:</div>
                   <div class="text-grey-darker text-left">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
                     Lorem
@@ -84,39 +87,40 @@
       <!-- Comments Section -->
       <div class="font-bold text-grey-darker mx-10 my-2 px-4 py-2 max-w-screen-lg">My Comments:</div>
       <div class="myComments mx-10 max-w-screen-lg rounded-xl border shadow-lg"></div>
-      </div>
+    </div>
 
-      <!-- Form -->
-      <div>
-        <form>
-          <input type="text" id="comments" name="comments" placeholder="Comments"
+    <!-- Form -->
+    <div>
+      <form>
+        <input type="text" id="comments" name="comments" placeholder="Comments"
           class="my-2 ml-10 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-          <button class="ml-10 md:ml-0 button bg-blue-600 hover:bg-blue-600 text-white mt-2 px-4 py-2 rounded-xl">Add Comment</button>
-        </form>
-      </div>
-    </form>
-    <!-- ---------------- FIREBASE BELOW --------------- -->
-    <!-- Put the Firebase config here -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-    <!-- Firebase Auth -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyB2ghQCvl9Bps-uv_7ToQTiwqzcYwiSsr0",
-        authDomain: "kiei-451-4d1c2.firebaseapp.com",
-        projectId: "kiei-451-4d1c2",
-        storageBucket: "kiei-451-4d1c2.appspot.com",
-        messagingSenderId: "1064307467074",
-        appId: "1:1064307467074:web:88407534ef9360dde81edb"
-      }
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-    <script src="index.js"></script>
+        <button class="ml-10 md:ml-0 button bg-blue-600 hover:bg-blue-600 text-white mt-2 px-4 py-2 rounded-xl">Add
+          Comment</button>
+      </form>
+    </div>
+  </form>
+  <!-- ---------------- FIREBASE BELOW --------------- -->
+  <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB2ghQCvl9Bps-uv_7ToQTiwqzcYwiSsr0",
+      authDomain: "kiei-451-4d1c2.firebaseapp.com",
+      projectId: "kiei-451-4d1c2",
+      storageBucket: "kiei-451-4d1c2.appspot.com",
+      messagingSenderId: "1064307467074",
+      appId: "1:1064307467074:web:88407534ef9360dde81edb"
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
 </body>
 
 </html>
