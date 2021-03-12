@@ -41,6 +41,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
   } else {
     //need to hide the rest of this form
     document.querySelector('form').classList.add('hidden')
+    document.querySelector('.container-homeCards').classList.add('hidden')
+    document.querySelector('.healthRecordInputForm').classList.add('hidden')
 
     // Initializes FirebaseUI Auth
     let ui = new firebaseui.auth.AuthUI(firebase.auth())
