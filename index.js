@@ -12,6 +12,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
   //   console.log(`my comments are submitted`);
   // })
   if (user) {
+
+    // let docRef = await db.collection('users').doc('name').get()
+
+    // let name = doc.data()
    
     const logout = document.querySelector('#sign-in-or-sign-out');
     logout.addEventListener('click', (event) => {
@@ -44,7 +48,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
       if (commentsText.length > 0) {
         document.querySelector('.myComments').insertAdjacentHTML('beforeend', `
-          <div class="mx-10 my-4 px-4 py-4 max-w-screen-lg my-4">
+          <div class="mx-10 my-2 px-2 py-2 max-w-screen-lg">
             ${commentsText}
           </div>
         `)
@@ -65,7 +69,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let commentsData = comments[i].data()
       let commentsText = commentsData.text
       document.querySelector('.myComments').insertAdjacentHTML('beforeend', `
-      <div class="mx-10 my-4 px-4 py-4 max-w-screen-lg my-4">
+      <div class="mx-10 my-2 px-2 py-2 max-w-screen-lg">
         ${commentsText}
       </div>
     `)
