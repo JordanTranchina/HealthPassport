@@ -14,37 +14,31 @@ firebase.auth().onAuthStateChanged(async function (user) {
   if (user) {
 
     // let docRef = await db.collection('users').doc('name').get()
-    let name = firebase.auth().currentUser.displayName
-    console.log(name);
-
-    document.querySelector(".welcome-text").insertAdjacentHTML("beforeend", `
-      <h1 class="welcome-text text-3xl md:text-5xl p-10 text-grey-darker">Welcome Back ${name}! How do you feel today?</h1>
-    `)
 
     // let name = doc.data()
-
+   
     const logout = document.querySelector('#sign-in-or-sign-out');
     logout.addEventListener('click', (event) => {
       event.preventDefault();
       firebase.auth().signOut()
-      console.log("logging out!");
-      document.location.href = 'index.html'
-      //   })
-
+        console.log("logging out!");
+        document.location.href = 'index.html'
+    //   })
+    
 
       // ORIGINAL FIREBASE AUTH LOGOUT
-      // document.querySelector('.sign-out').addEventListener('click', function (event) {
-      //   event.preventDefault()
-      //   firebase.auth().signOut()
-      //   console.log("logging out!");
-      //   document.location.href = 'index.html'
+    // document.querySelector('.sign-out').addEventListener('click', function (event) {
+    //   event.preventDefault()
+    //   firebase.auth().signOut()
+    //   console.log("logging out!");
+    //   document.location.href = 'index.html'
+    
 
 
-
-      // document.querySelector('.sign-in-or-sign-out-button').addEventListener('click', function (event) {
-      //   event.preventDefault()
-      //   firebase.auth().signOut()
-      //   document.location.href = 'index.html'
+    // document.querySelector('.sign-in-or-sign-out-button').addEventListener('click', function (event) {
+    //   event.preventDefault()
+    //   firebase.auth().signOut()
+    //   document.location.href = 'index.html'
     })
 
     document.querySelector("form").addEventListener("submit", async function (event) {
@@ -75,7 +69,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let commentsData = comments[i].data()
       let commentsText = commentsData.text
       document.querySelector('.myComments').insertAdjacentHTML('beforeend', `
-      <div class="mx-10 my-2 px-2 py-2 max-w-screen-lg">
+      <div class="mx-2 my-2 px-2 py-2 max-w-screen-lg">
         ${commentsText}
       </div>
     `)
