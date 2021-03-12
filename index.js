@@ -39,8 +39,9 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
 
   } else {
-    //need to hide the rest of this form
-    document.querySelector('form').classList.add('hidden')
+    //hiding body elements when signed out
+    document.querySelector('.navigation').classList.add('hidden')
+    document.querySelector('.header').classList.add('hidden')
     document.querySelector('.container-homeCards').classList.add('hidden')
     document.querySelector('.healthRecordInputForm').classList.add('hidden')
 
