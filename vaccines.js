@@ -8,6 +8,12 @@ firebase.auth().onAuthStateChanged(async function (user) {
     // Signed in
     console.log('signed in')
 
+    let db = firebase.firestore()
+    db.collection('users').doc(user.uid).set({
+      name: user.displayName,
+      email: user.email
+      })
+
     const logout = document.querySelector('#sign-in-or-sign-out');
     logout.addEventListener('click', (event) => {
       event.preventDefault();
@@ -16,9 +22,17 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.location.href = 'index.html'
     })
 
+
+    
+      
+    
     // Listen for the form submit and create/render the vaccine card
+
+
+
     document.querySelector("form").addEventListener("submit", async function (event) {
       event.preventDefault()
+
 
       // declare variables
       let shotUsername = user.displayName
@@ -60,16 +74,44 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#dateBooster2').value = ''
       printVaccineCard(vaccineCard) //asks front-end to print the cards when another is added
 
-    }) // end of form submit
+
+
+
+
+      })
+
+ // end of form submit
 
     let response = await fetch('/.netlify/functions/get_shots')
     let shots = await response.json()
+    console.log(shots)
+
+    for (let i = 0; i < shots.length; i++) {
+      shot = shots[i]
+      if (shot.shotUsername == user.displayName) {
+        console.log('it works!')
+        
+      }      
+    }
+
+    let querySnapshot = await db.collection('shots').where('userId', '==', user.uid).get()
+    console.log(`Number to todos in collection: ${querySnapshot.size}`)
+    console.log(querySnapshot)
+
+    let butter = querySnapshot.docs
+    console.log(butter)
+    for (let i=0; i<butter.length; i++) {
+      let butterId = butter[i].id
+      let buttery = butter[i].data()
+      console.log(buttery)
+      let butterText = butter.text
+    }
     for (let i = 0; i < shots.length; i++) {
       let vaccineCard = shots[i]
       console.log(vaccineCard);
       printVaccineCard(vaccineCard)
     }
-
+    
   } else {
     // Signed out
     console.log('signed out')
