@@ -82,10 +82,20 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
     let response = await fetch('/.netlify/functions/get_familyMembers')
     let familyMembers = await response.json()
+    console.log(familyMembers)
+
     for (let i = 0; i < familyMembers.length; i++) {
-      let familyMemberCard = familyMembers[i]
-      console.log(familyMemberCard);
-      printFamilyMemberCard(familyMemberCard)
+      fam = familyMembers[i]
+      console.log(history)
+        if (fam.username == user.displayName) {
+          console.log('it works!')
+          let familyMemberCard = fam
+          console.log(familyMemberCard)
+          printFamilyMemberCard(familyMemberCard)
+      }      
+
+    
+    
     }
 
   } else {
