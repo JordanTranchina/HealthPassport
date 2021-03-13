@@ -12,36 +12,28 @@
 <div class="sign-in-or-sign-out"></div>
 
 <body>
-  <form>
-    <!-- required form for sign in sign out ability -->
+  <!-- NAVIGATION -->
+  <div title="navigation" class="navigation px-2 md:px-10 py-4 text-blue-600 border border-gray-300">
+    <div class="flex">
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="index.html">Home</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Vaccines.html">Vaccines</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Family.html">Family</a></p>
+      <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="mailto:help@HealthPassport.com">Help</a>
+      </p>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <div class="md:w-full w-0 md:w-1/8"></div>
+      <p class="sign-in-or-sign-out md:w-full w-1/5 md:w-1/8 text-center md:text-right" id="sign-in-or-sign-out"><a
+          href="index.html">Log Out</a></p>
 
-    <!-- NAVIGATION -->
-    <div title="navigation" class="px-2 md:px-10 py-4 text-blue-600 border border-gray-300">
-      <div class="flex">
-        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="index.html">Home</a></p>
-        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Vaccines.html">Vaccines</a></p>
-        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="Family.html">Family</a></p>
-        <p class="md:w-full w-1/5 md:w-1/8 text-center md:text-left"><a href="mailto:help@HealthPassport.com">Help</a>
-        </p>
-        <div class="md:w-full w-0 md:w-1/8"></div>
-        <div class="md:w-full w-0 md:w-1/8"></div>
-        <div class="md:w-full w-0 md:w-1/8"></div>
-        <!-- I had to take Alex Navarro | out to make it all fit. 
-        Probably a nice to have to have the name and if so we have to 
-        figure out how responsive design makes it only appear when on a full size screen. -->
-        <p class="sign-in-or-sign-out md:w-full w-1/5 md:w-1/8 text-center md:text-right" id="sign-in-or-sign-out"><a
-            href="index.html">Log Out</a></p>
-
-      </div>
     </div>
+  </div>
 
-    <!-- HEADER -->
-    <div title="Header">
-      <h1 class="welcome-text"></h1>
-      <h2 class="text-lg md:text-2xl px-10 text-grey-darker">Latest Health Passport Entries</h2>
-    </div>
-  </form> <!-- end of required form for sign in sign out ability -->
-
+  <!-- HEADER -->
+  <div title="header" class="header">
+    <h1 class="welcome-text"></h1>
+    <h2 class="text-lg md:text-2xl px-10 text-grey-darker">Latest Health Passport Entries</h2>
+  </div>
 
   <!-- Family Cards -->
   <div class="container-homeCards">
@@ -80,30 +72,45 @@
     </div>
   </div>
 
+  <!-- Health Record Input Form -->
 
-  <!-- Form -->
+  <!-- checkupDate -->
+  <!-- height -->
+  <!-- weight -->
+  <!-- bloodPressure -->
+  <!-- restingHeartRate -->
+  <!-- notes -->
+  <!-- myComments -->
+
   <div class="healthRecordInputForm">
+
     <form class="px-4 py-2 max-w-xs rounded-xl border shadow-lg my-4 mx-10">
-      <!-- memberName -->
-      <input type="text" id="memberName" name="memberName" placeholder="Name of Family Member"
+      <!-- checkupDate -->
+      <input type="text" id="checkupDate" name="checkupDate" placeholder="Checkup date"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <!-- relationship -->
-      <input type="text" id="relationship" name="relationship" placeholder="Relationship to You"
+
+      <!-- height -->
+      <input type="text" id="height" name="height" placeholder="Height"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <!-- age -->
-      <input type="text" id="age" name="age" placeholder="Age of Family Member"
+
+      <!-- weight -->
+      <input type="text" id="weight" name="weight" placeholder="Weight"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <!-- healthIssue -->
-      <input type="text" id="healthIssue" name="healthIssue" placeholder="Health Issue"
+
+      <!-- bloodPressure -->
+      <input type="text" id="bloodPressure" name="bloodPressure" placeholder="Blood Pressure"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <!-- ageWhenDiagnosed -->
-      <input type="text" id="ageWhenDiagnosed" name="ageWhenDiagnosed" placeholder="Age when Diagnosed"
+
+      <!-- restingHeartRate -->
+      <input type="text" id="restingHeartRate" name="restingHeartRate" placeholder="Resting Heart Rate"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
-      <!-- issueUnderControl -->
-      <input type="text" id="issueUnderControl" name="issueUnderControl" placeholder="Issue under Control?"
-        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
       <!-- notes -->
       <input type="text" id="notes" name="notes" placeholder="Notes"
+        class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+      <!-- myComments -->
+      <input type="text" id="myComments" name="myComments" placeholder="My comments"
         class="my-2 p-2 w-72 border border-gray-300 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
 
       <button class="button bg-blue-600 hover:bg-blue-600 text-white mt-2 px-4 py-2 rounded-xl">Submit</button>

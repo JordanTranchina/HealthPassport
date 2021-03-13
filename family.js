@@ -109,7 +109,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
 })
 
 async function printFamilyMemberCard(familyMemberCard) {
-  console.log("Succesfully called printFamilyMemberCard");
+  console.log("Successfully called printFamilyMemberCard");
   let familyMemberId = familyMemberCard.id
   document.querySelector(".container-familyCards").insertAdjacentHTML("beforeend",
     `

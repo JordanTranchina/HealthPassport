@@ -16,9 +16,8 @@ exports.handler = async function (event) {
   let notes = body.notes
   // let createdTimestamp = firebase.firstore.FieldValue.serverTimestamp()
 
-  console.log("Succesfull call of create_familyMember.js");
+  console.log("Successful call of create_healthRecord.js");
   console.log(`currentUserId is ${currentUserId}`);
-  console.log(`memberName is ${memberName}`);
 
   let familyMember = {
     userId: currentUserId,
