@@ -90,22 +90,24 @@ firebase.auth().onAuthStateChanged(async function (user) {
       shot = shots[i]
       if (shot.shotUsername == user.displayName) {
         console.log('it works!')
-        
+        let vaccineCard = shot
+        console.log(vaccineCard)
+        printVaccineCard(vaccineCard)
       }      
     }
 
-    let querySnapshot = await db.collection('shots').where('userId', '==', user.uid).get()
-    console.log(`Number to todos in collection: ${querySnapshot.size}`)
-    console.log(querySnapshot)
+    // let querySnapshot = await db.collection('shots').where('userId', '==', user.uid).get()
+    // console.log(`Number to todos in collection: ${querySnapshot.size}`)
+    // console.log(querySnapshot)
 
-    let butter = querySnapshot.docs
-    console.log(butter)
-    for (let i=0; i<butter.length; i++) {
-      let butterId = butter[i].id
-      let buttery = butter[i].data()
-      console.log(buttery)
-      let butterText = butter.text
-    }
+    // let butter = querySnapshot.docs
+    // console.log(butter)
+    // for (let i=0; i<butter.length; i++) {
+    //   let butterId = butter[i].id
+    //   let buttery = butter[i].data()
+    //   console.log(buttery)
+    //   let butterText = butter.text
+    // }
     for (let i = 0; i < shots.length; i++) {
       let vaccineCard = shots[i]
       console.log(vaccineCard);
