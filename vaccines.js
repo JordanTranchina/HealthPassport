@@ -108,11 +108,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
     //   console.log(buttery)
     //   let butterText = butter.text
     // }
-    for (let i = 0; i < shots.length; i++) {
-      let vaccineCard = shots[i]
-      console.log(vaccineCard);
-      printVaccineCard(vaccineCard)
-    }
+    // for (let i = 0; i < shots.length; i++) {
+    //   let vaccineCard = shots[i]
+    //   console.log(vaccineCard);
+    //   printVaccineCard(vaccineCard)
+    // }
     
   } else {
     // Signed out
