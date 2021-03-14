@@ -1,6 +1,5 @@
 firebase.auth().onAuthStateChanged(async function (user) {
 
-
   if (user) {
     // Signed in
     console.log('signed in')
@@ -87,15 +86,13 @@ firebase.auth().onAuthStateChanged(async function (user) {
     for (let i = 0; i < familyMembers.length; i++) {
       fam = familyMembers[i]
       console.log(history)
-        if (fam.username == user.displayName) {
-          console.log('it works!')
-          let familyMemberCard = fam
-          console.log(familyMemberCard)
-          printFamilyMemberCard(familyMemberCard)
-      }      
+      if (fam.username == user.displayName) {
+        console.log('it works!')
+        let familyMemberCard = fam
+        console.log(familyMemberCard)
+        printFamilyMemberCard(familyMemberCard)
+      }
 
-    
-    
     }
 
   } else {

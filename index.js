@@ -1,15 +1,15 @@
 firebase.auth().onAuthStateChanged(async function (user) {
 
-
   if (user) {
     // Signed in
     console.log('signed in')
 
+    // I wonder if this is necessary
     let db = firebase.firestore()
     db.collection('users').doc(user.uid).set({
       name: user.displayName,
       email: user.email
-      })
+    })
 
     const logout = document.querySelector('#sign-in-or-sign-out');
     logout.addEventListener('click', (event) => {
@@ -69,7 +69,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let myComments = document.querySelector("#myComments").value
       console.log(`My comments are ${myComments}`);
 
-      let response = await fetch("/.netlify/functions/get_healthRecord", {
+      let response = await fetch("/.netlify/functions/create_healthRecord", {
         method: "POST",
         body: JSON.stringify({
           username: username,
@@ -82,27 +82,16 @@ firebase.auth().onAuthStateChanged(async function (user) {
           notes: notes,
           myComments: myComments,
         })
-      }) //end of response
+      }) //end of response from creation
 
-      // let familyMemberCard = await response.json()
-      // // repeating back what we just sent to the backend
-      // console.log(response);
-      // console.log(familyMemberCard);
-      // // clearing form values on frontend
-      // document.querySelector('#memberName').value = ''
-      // document.querySelector('#relationship').value = ''
-      // document.querySelector('#age').value = ''
-      // document.querySelector('#healthIssue').value = ''
-      // document.querySelector('#ageWhenDiagnosed').value = ''
-      // document.querySelector('#issueUnderControl').value = ''
-      // document.querySelector('#notes').value = ''
 
       // printFamilyMemberCard(familyMemberCard) //asks front-end to print the cards when another is added
 
       let indexCard = await response.json()
-      console.log(response);
+      console.log(response);  // repeating back what we just sent to the backend
       console.log(indexCard);
-      // clear values
+
+      // clearing form values on frontend
       document.querySelector('#checkupDate').value = ''
       document.querySelector('#height').value = ''
       document.querySelector('#weight ').value = ''
@@ -110,29 +99,27 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#restingHeartRate').value = ''
       document.querySelector('#notes').value = ''
       document.querySelector('#myComments').value = ''
-      printIndexCard(indexCard) //asks front-end to print the cards when another is added
-      })
-    
-     // end of form submit
-
+      printIndexCard(indexCard) //asks front-end to print the card we just sent
+    }) // end of form submit
 
     let response = await fetch('/.netlify/functions/get_healthRecords')
     let health = await response.json()
     console.log(health)
-  
+
     for (let i = 0; i < health.length; i++) {
       healthCard = health[i]
+      // check below line for consistency of name variable
       if (healthCard.healthUsername == user.displayName) {
         console.log('it works!')
         let indexCard = healthCard
         console.log(indexCard)
         printindexCard(indexCard)
       }
-    }      
-    
-
+    }
 
   } else {
+    // Signed out
+    console.log('signed out')
     //hiding body elements when signed out
     document.querySelector('.navigation').classList.add('hidden')
     document.querySelector('.header').classList.add('hidden')
@@ -156,10 +143,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
 })
 
 async function printIndexCard(indexCard) {
-console.log("Succesfully called printVaccineCard");
-let indexCardId = indexCard.id
-document.querySelector(".container-homeCards").insertAdjacentHTML("beforeend",
-  `
+  console.log("Succesfully called printVaccineCard");
+  let indexCardId = indexCard.id
+  document.querySelector(".container-homeCards").insertAdjacentHTML("beforeend",
+    `
   <div class="homeCard mx-10 my-2 px-4 py-2 max-w-screen-lg rounded-xl border shadow-lg my-4" id="homeCard-1">
   <h3 class="font-bold text-grey-darker pb-2">Checkup on ${checkupDate}</h3> 
   <div class="header border-t pt-4 border-gray-300">
@@ -193,5 +180,5 @@ document.querySelector(".container-homeCards").insertAdjacentHTML("beforeend",
   </div>
 </div>
   `
-)
+  )
 }
