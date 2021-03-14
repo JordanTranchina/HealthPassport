@@ -7,6 +7,7 @@ exports.handler = async function (event) {
 
   let currentUserId = body.currentUserId
   let username = body.username
+
   let memberName = body.memberName
   let relationship = body.relationship
   let age = body.age

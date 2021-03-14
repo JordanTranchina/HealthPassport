@@ -107,11 +107,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
     for (let i = 0; i < health.length; i++) {
       healthCard = health[i]
       // check below line for consistency of name variable
-      if (healthCard.healthUsername == user.displayName) {
+      if (healthCard.username == user.displayName) {
         console.log('it works!')
         let indexCard = healthCard
         console.log(indexCard)
-        printindexCard(indexCard)
+        printIndexCard(indexCard)
       }
     }
 
@@ -141,38 +141,40 @@ firebase.auth().onAuthStateChanged(async function (user) {
 })
 
 async function printIndexCard(indexCard) {
-  console.log("Succesfully called printVaccineCard");
+  console.log("Successfully called printIndexCard");
+  console.log(checkupDate);
+  console.log(height);
   let indexCardId = indexCard.id
   document.querySelector(".container-homeCards").insertAdjacentHTML("beforeend",
     `
   <div class="homeCard mx-10 my-2 px-4 py-2 max-w-screen-lg rounded-xl border shadow-lg my-4" id="homeCard-1">
-  <h3 class="font-bold text-grey-darker pb-2">Checkup on ${checkupDate}</h3> 
+  <h3 class="font-bold text-grey-darker pb-2">Checkup on ${indexCard.checkupDate}</h3> 
   <div class="header border-t pt-4 border-gray-300">
     <div class="md:flex">
       <div class="home-card-left space-y-2 md:w-1/3 pb-2 md:pb-0">
         <div class="card-feature-height flex">
           <div class="w-1/2 text-grey-darker text-left">Height</div>
-          <div class="w-1/2 text-grey-darker text-right pr-4">${height}</div>
+          <div class="w-1/2 text-grey-darker text-right pr-4">${indexCard.height}</div>
         </div>
         <div class="card-feature-weight flex">
           <div class="w-1/2 text-grey-darker text-left">Weight</div>
-          <div class="w-1/2 text-grey-darker text-right pr-4">${weight}</div> 
+          <div class="w-1/2 text-grey-darker text-right pr-4">${indexCard.weight}</div> 
         </div>
         <div class="card-feature-blood-pressure flex">
           <div class="w-1/2 text-grey-darker text-left">Blood Pressure</div>
-          <div class="w-1/2 text-grey-darker text-right pr-4">${bloodPressure}</div> 
+          <div class="w-1/2 text-grey-darker text-right pr-4">${indexCard.bloodPressure}</div> 
         </div>
         <div class="card-feature-resting-heart-rate flex">
           <div class="w-1/2 text-grey-darker text-left">Resting Heart Rate</div>
-          <div class="w-1/2 text-grey-darker text-right pr-4">${restingHeartRate}</div> 
+          <div class="w-1/2 text-grey-darker text-right pr-4">${indexCard.restingHeartRate}</div> 
         </div>
       </div>
       <div
         class="home-card-right space-y-2 pt-2 md:pt-0 md:w-2/3 border-t md:border-t-0 md:border-l border-gray-300 md:px-4">
         <div class="text-grey-darker">Notes:</div>
-        <div class="text-grey-darker">${notes}</div>
+        <div class="text-grey-darker">${indexCard.notes}</div>
         <div class="text-grey-darker">My Comments:</div>
-        <div class="text-grey-darker">${myComments}</div>
+        <div class="text-grey-darker">${indexCard.myComments}</div>
       </div>
     </div>
   </div>
