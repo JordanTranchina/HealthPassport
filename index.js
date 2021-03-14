@@ -84,9 +84,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
         })
       }) //end of response from creation
 
-
-      // printFamilyMemberCard(familyMemberCard) //asks front-end to print the cards when another is added
-
       let indexCard = await response.json()
       console.log(response);  // repeating back what we just sent to the backend
       console.log(indexCard);
@@ -99,6 +96,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#restingHeartRate').value = ''
       document.querySelector('#notes').value = ''
       document.querySelector('#myComments').value = ''
+
       printIndexCard(indexCard) //asks front-end to print the card we just sent
     }) // end of form submit
 

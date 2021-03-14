@@ -62,10 +62,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
           notes: notes
         })
       }) //end of response
+
       let familyMemberCard = await response.json()
-      // repeating back what we just sent to the backend
-      console.log(response);
+      console.log(response);       // repeating back what we just sent to the backend
       console.log(familyMemberCard);
+
       // clearing form values on frontend
       document.querySelector('#memberName').value = ''
       document.querySelector('#relationship').value = ''
@@ -76,7 +77,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
       document.querySelector('#notes').value = ''
 
       printFamilyMemberCard(familyMemberCard) //asks front-end to print the cards when another is added
-
     }) // end of form submit
 
     let response = await fetch('/.netlify/functions/get_familyMembers')
